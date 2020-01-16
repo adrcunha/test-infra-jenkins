@@ -13,7 +13,7 @@ pipeline {
           pwd
           ls
           export GOPATH=/workspace/go
-          # hack for making the script happy, shouldn't be required
+          # hack for making the script happy, should not be required
           export PULL_BASE_REF=bogus_base_ref
           export PROW_JOB_ID=bogus_job
           #
