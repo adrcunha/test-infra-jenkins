@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'knative-tests/test-infra/prow-tests:stable'
-#      registryUrl 'https://gcr.io/knative-tests/test-infra'
+      /* registryUrl 'https://gcr.io/knative-tests/test-infra' */
     }
   }
   stages {
