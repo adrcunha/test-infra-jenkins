@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker {
       image 'gcr.io/knative-tests/test-infra/prow-tests-go112:stable'
-      args '--entrypoint=bash'
+      args '--entrypoint=""'
     }
   }
   stages {
