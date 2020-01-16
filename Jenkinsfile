@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'knative-tests/test-infra/prow-tests:stable'
+      image 'gcr.io/knative-tests/test-infra/prow-tests:stable'
       /* registryUrl 'https://gcr.io/knative-tests/test-infra' */
     }
   }
