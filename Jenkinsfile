@@ -15,9 +15,10 @@ pipeline {
           # hack. there must be a better way.
           export SRC="$(pwd)"
           export GOPATH="$(mktemp -d)"
-          mkdir -p $GOPATH/src/knative.dev
-          cd $GOPATH/src/knative.dev
-          mv $SRC test-infra
+          mkdir -p $GOPATH/src/knative.dev/test-infra
+          cd $GOPATH/src/knative.dev/test-infra
+          cp -ar $SRC/* .
+          cp -ar $SRC/.* .
           # hack for making the script happy, shouldn't be required
           export PULL_BASE_REF=bogus_base_ref
           export PROW_JOB_ID=bogus_job
