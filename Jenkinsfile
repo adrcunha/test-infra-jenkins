@@ -11,8 +11,13 @@ pipeline {
         sh '''
           set -ex
           pwd
-          ls
+          ls -la
+          # hack. there must be a better way.
+          export SRC="$(pwd)"
           export GOPATH=/workspace/go
+          mkdir -p $GOPATH/src/knative.dev
+          cd $GOPATH/src/knative.dev
+          mv $SRC test-infra
           # hack for making the script happy, shouldn't be required
           export PULL_BASE_REF=bogus_base_ref
           export PROW_JOB_ID=bogus_job
