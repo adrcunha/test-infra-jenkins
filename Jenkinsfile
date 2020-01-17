@@ -14,7 +14,7 @@ pipeline {
           ls -la
           # hack. there must be a better way.
           export SRC="$(pwd)"
-          export GOPATH=/workspace/go
+          export GOPATH="$(mktemp -d)"
           mkdir -p $GOPATH/src/knative.dev
           cd $GOPATH/src/knative.dev
           mv $SRC test-infra
